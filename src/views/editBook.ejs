@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header') %> 
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container pt-5">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <h1 class="text-center py-5">Edit book: <%= book.title %> </h1>
+                        <form action="/book/update/<%= book.id %>" method="post">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title" name="title" autofocus value="<%= book.title %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="author" class="form-label">Author</label>
+                                <input type="text" class="form-control" id="author" name="author" value="<%= book.author %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Image</label>
+                                <input type="text" class="form-control" id="image" name="image" placeholder="http://www.website.com" value="<%= book.image %>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" name="description" rows="3" style="resize: none;" value="<%= book.description %>"></textarea>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header', {titleHTML: 'New entry' }) %>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <div class="container pt-5">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <h1 class="text-center py-5">New Entry</h1>
+                    <% try { if (error) { %>
+                        <div class="alert alert-danger" role="alert">
+                            <%= error %>
+                        </div>
+
+                        <% } } catch (err) { console.log('error'); } %>
+                            <form action="/new-entry" method="post">
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" autofocus>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="author" class="form-label">Author</label>
+                                    <input type="text" class="form-control" id="author" name="author">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Image</label>
+                                    <input type="text" class="form-control" id="image" name="image" placeholder="http://www.website.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Description</label>
+                                    <textarea class="form-control" id="description" name="description" rows="3" style="resize: none;"></textarea>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

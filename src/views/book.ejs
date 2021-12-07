@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header') %>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <div class="container pt-5">
+            <div class="row justify-content-center">
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <%= book.title +' / '+ book.author %> 
+                            </div>
+                            <img src="<%= book.image %>" class="img-fluid">
+                            <div class="card-body">
+                                <%= book.description %> 
+                            </div>
+                            <div class="card-footer btn-group">
+                                <a href="/book/delete/<%= book.id %> " class="btn btn-danger">Delete</a>
+                                <a href="/book/edit/<%= book.id %> " class="btn btn-warning">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+</body>
+
+</html>
